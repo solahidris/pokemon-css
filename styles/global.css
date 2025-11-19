@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --primary: hsl(187, 85%, 60%);
   --link-hover: hsl(207, 100%, 94%)
