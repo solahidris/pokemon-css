@@ -1,6 +1,6 @@
 {
   "name": "@solahidris/solcn",
-  "version": "1.0.0",
+  "version": "1.2.1",
   "description": "A CLI for adding beautiful 3D components to your project",
   "main": "dist/index.js",
   "bin": {
@@ -47,4 +47,3 @@
     "url": "https://github.com/solahidris/solcn-cli.git"
   }
 }
-
