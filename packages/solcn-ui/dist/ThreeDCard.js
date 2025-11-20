@@ -88,12 +88,14 @@ function useSpring(initialValue, settings = {
  * @param {string} props.backimg - Back image URL (optional, defaults to front image)
  * @param {boolean} props.disableClickEnlarge - Disable click-to-enlarge feature (default: false)
  * @param {boolean} props.disableHoverCardGlow - Disable hover glow effect (default: false)
+ * @param {boolean} props.disableFlare - Disable glare spotlight effect (default: false)
  */
 export default function ThreeDCard({
   img,
   backimg,
   disableClickEnlarge = false,
-  disableHoverCardGlow = false
+  disableHoverCardGlow = false,
+  disableFlare = false
 }) {
   const cardRef = useRef(null);
   const [interact, setInteract] = useState(false);
@@ -410,7 +412,7 @@ export default function ThreeDCard({
                   mixBlendMode: 'color-dodge',
                   opacity: springGlare.o
                 }
-              }), /*#__PURE__*/_jsx("div", {
+              }), !disableFlare && /*#__PURE__*/_jsx("div", {
                 style: {
                   width: '100%',
                   display: 'grid',

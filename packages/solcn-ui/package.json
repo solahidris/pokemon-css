@@ -1,6 +1,6 @@
 {
   "name": "@solahidris/ui",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A beautiful React UI library featuring interactive 3D card components with holographic effects",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",

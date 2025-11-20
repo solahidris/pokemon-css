@@ -92,12 +92,14 @@ function useSpring(initialValue, settings = { stiffness: 0.066, damping: 0.25 })
  * @param {string} props.backimg - Back image URL (optional, defaults to front image)
  * @param {boolean} props.disableClickEnlarge - Disable click-to-enlarge feature (default: false)
  * @param {boolean} props.disableHoverCardGlow - Disable hover glow effect (default: false)
+ * @param {boolean} props.disableFlare - Disable glare spotlight effect (default: false)
  */
 export default function ThreeDCard({ 
   img, 
   backimg, 
   disableClickEnlarge = false, 
-  disableHoverCardGlow = false 
+  disableHoverCardGlow = false,
+  disableFlare = false
 }) {
   const cardRef = useRef(null);
   const [interact, setInteract] = useState(false);
@@ -379,22 +381,24 @@ export default function ThreeDCard({
                 />
                 
                 {/* Glare spotlight */}
-                <div
-                  style={{
-                    width: '100%',
-                    display: 'grid',
-                    gridArea: '1/1',
-                    aspectRatio: '0.718',
-                    borderRadius: '4.55% / 3.5%',
-                    transformStyle: 'preserve-3d',
-                    pointerEvents: 'none',
-                    overflow: 'hidden',
-                    transform: 'translateZ(1.41px)',
-                    backgroundImage: `radial-gradient(farthest-corner circle at ${springGlare.x}% ${springGlare.y}%, hsla(0, 0%, 100%, 0.8) 10%, hsla(0, 0%, 100%, 0.65) 20%, hsla(0, 0%, 0%, 0.5) 90%)`,
-                    opacity: springGlare.o,
-                    mixBlendMode: 'overlay',
-                  }}
-                />
+                {!disableFlare && (
+                  <div
+                    style={{
+                      width: '100%',
+                      display: 'grid',
+                      gridArea: '1/1',
+                      aspectRatio: '0.718',
+                      borderRadius: '4.55% / 3.5%',
+                      transformStyle: 'preserve-3d',
+                      pointerEvents: 'none',
+                      overflow: 'hidden',
+                      transform: 'translateZ(1.41px)',
+                      backgroundImage: `radial-gradient(farthest-corner circle at ${springGlare.x}% ${springGlare.y}%, hsla(0, 0%, 100%, 0.8) 10%, hsla(0, 0%, 100%, 0.65) 20%, hsla(0, 0%, 0%, 0.5) 90%)`,
+                      opacity: springGlare.o,
+                      mixBlendMode: 'overlay',
+                    }}
+                  />
+                )}
               </div>
             </div>
           </div>
