@@ -1,0 +1,50 @@
+{
+  "name": "@solahidris/solcn",
+  "version": "1.0.0",
+  "description": "A CLI for adding beautiful 3D components to your project",
+  "main": "dist/index.js",
+  "bin": {
+    "solcn": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "registry",
+    "templates"
+  ],
+  "scripts": {
+    "build": "babel src --out-dir dist --extensions .js,.mjs",
+    "prepublishOnly": "npm run build",
+    "dev": "node src/index.js"
+  },
+  "keywords": [
+    "cli",
+    "components",
+    "ui",
+    "3d",
+    "react",
+    "solcn"
+  ],
+  "author": "solahidris",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "prompts": "^2.4.2",
+    "chalk": "^4.1.2",
+    "fs-extra": "^11.2.0",
+    "ora": "^5.4.1",
+    "node-fetch": "^2.7.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.23.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/solahidris/solcn-cli.git"
+  }
+}
+

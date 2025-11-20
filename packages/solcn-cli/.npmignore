@@ -1,0 +1,11 @@
+# Build
+dist/
+node_modules/
+
+# Development
+*.log
+.DS_Store
+
+# Test
+coverage/
+
